@@ -30,7 +30,7 @@ export type UserDto = {
 
 export default function Users(props: Props) {
   return (
-    <div className="w-full h-screen  bg-gray-300 grid justify-center ">
+    <div className="w-full overflow-y-auto h-screen  bg-gray-300 grid justify-center ">
       <div className="bg-white rounded-3xl text-center px-5 py-4 my-10 w-96">
         <UsersList users={props.users} />
         <UsersForm />
