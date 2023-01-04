@@ -1,4 +1,4 @@
-import { UserDto } from "@/pages/users";
+import { UserDto } from "@/pages";
 
 type Props = {
   users: UserDto[];
