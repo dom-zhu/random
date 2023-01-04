@@ -1,19 +1,22 @@
-import { Dom } from "@/pages/Dom";
-import { TodoList } from "@/pages/todo-list/TodoList";
+import Users from "@/pages/users";
 import { Inter } from "@next/font/google";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const router = useRouter();
+
+  router.push("/users");
+
   return (
     <>
-      <div className="w-full h-full bg-gray-300 grid justify-center ">
-        <div className="bg-white rounded-3xl text-center px-5 py-4 mt-10 h-[800px] w-96">
-          {/* <h1 className="text-purple-700 text-3xl mb-2">TodoList</h1> */}
-          {/* <TodoList /> */}
-          <Dom />
+      404
+      {/* <div className="w-full h-full bg-gray-300 grid justify-center ">
+        <div className="bg-white rounded-3xl text-center px-5 py-4 my-10 w-96">
+          <Users />
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
