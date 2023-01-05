@@ -1,16 +1,16 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useSWRConfig } from "swr";
 
 export const UsersForm = () => {
   const [name, setName] = useState("");
+  const { mutate } = useSWRConfig();
 
   const handleAddUser = async (e: React.FormEvent) => {
-    /**
-     * TODO: use swr, invalidate state when user added
-     */
     e.preventDefault();
 
     await axios.get(`/api/add-user`, { params: { name } });
+    mutate("/api/get-users");
   };
 
   return (
